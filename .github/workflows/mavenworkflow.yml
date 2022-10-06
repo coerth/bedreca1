@@ -6,13 +6,13 @@ on:
 jobs:
   Do-the-travis-thing:
     runs-on: ubuntu-20.04 #or ubuntu-latest
-    # services:
-    #   mysql:
-    #     image: mysql:8.0
-    #     env:
-    #       DB_DATABASE: startcode_test
-    #       DB_USER: dev
-    #       DB_PASSWORD: ax2
+    services:
+       mysql:
+         image: mysql:8.0
+         env:
+           DB_DATABASE: ca1
+           DB_USER: ${{ secrets.REMOTE_USER}}
+           DB_PASSWORD: ${{ secrets.REMOTE_PW}}
     steps:
       - name: checkout
         uses: actions/checkout@v2
