@@ -1,0 +1,63 @@
+@startuml
+
+class Hobby
+class Person
+class Address
+class CityInfo
+class Phone
+class Club
+class Team
+
+Hobby : - String name
+Hobby : - String description
+
+
+Person : - String email
+Person : - String firstName
+Person : - String lastName
+Person : - Address address
+Person : - Phone phone
+Person : - Set<Hobby> hobbySet
+Person : - Set<Team> teamSet
+Person : + signUpToTeam()
+Person : + leaveTeam()
+Person : + addHobby()
+Person : + deleteHobby()
+
+Address : - String street
+Address : - String additionalInfo
+Address : - CityInfo cityInfo
+
+CityInfo : - int zipCode
+CityInfo : - String city
+
+Phone : - int number
+Phone : - String description
+
+Club : - String name
+Club : - Address address
+Club : - Phone phone
+Club : - List<Team> teamList
+Club : + addTeam()
+Club : + removeTeam()
+
+Team : - String name
+Team : - Set<Person> personSet
+Team : - Hobby hobby
+Team : - int maxParticipants
+Team : - LocalDate startDate
+Team : - LocalDate endDate
+Team : - String level
+Team : - int price
+Team : + addPerson()
+Team : + removePerson()
+
+Person o-- Hobby
+Person o-- Address
+Address o-- CityInfo
+Person o-- Phone
+Club o-- Team
+Team o-- Hobby
+Team o-- Person
+
+@enduml

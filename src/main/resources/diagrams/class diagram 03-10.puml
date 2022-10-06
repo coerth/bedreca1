@@ -1,0 +1,90 @@
+@startuml
+
+class Hobby
+class Person
+class Address
+class CityInfo
+class Phone
+class PersonHandler
+interface IFacade
+class HobbyFacade
+class PersonFacade
+class AddressFacade
+class CityInfoFacade
+class PhoneFacade
+class HobbyDTO
+class CityInfoDTO
+class AddressDTO
+class PersonDTO
+class PhoneDTO
+class ZipDTO
+
+
+
+Hobby : - String name
+Hobby : - String description
+
+Person : - String email
+Person : - String firstName
+Person : - String lastName
+Person : - Address address
+Person : - Phone phone
+Person : - Set<Hobby> hobbySet
+
+PersonHandler : + addHobby()
+PersonHandler : + deleteHobby()
+
+Address : - String street
+Address : - String additionalInfo
+Address : - CityInfo cityInfo
+
+CityInfo : - int zipCode
+CityInfo : - String city
+
+Phone : - int number
+Phone : - String description
+
+IFacade : <T> create(T)
+IFacade : <T> delete(T)
+IFacade : List<T> getAll()
+IFacade : <T> GetById(Integer)
+IFacade : <T> update(T)
+
+PhoneDTO : Integer id
+PhoneDTO : String description
+PhoneDTO : Integer number
+PhoneDTO : InnerPersonDTO innerPersonDTO
+
+HobbyDTO : Integer id
+HobbyDTO : String name
+HobbyDTO : String description
+HobbyDTO : Integer amountOfHobbyists
+
+CityInfoDTO : Integer id
+CityInfoDTO : String city
+CityInfoDTO : String zipCode
+
+PersonDTO : Integer id
+PersonDTO : String firstName
+PersonDTO : String lastName
+PersonDTO : String email
+PersonDTO : Set<InnerHobbyDTO> hobbySet
+PersonDTO : Set<InnerPhoneDTO> phoneSet
+PersonDTO : InnerAddress innerPersonDTO
+
+AddressDTO : Integer id
+AddressDTO : String street
+AddressDTO : String additionalInfo
+AddressDTO : Set<InnerPersonDTO> people
+
+Person o-- Hobby
+Person o-- Address
+Address o-- CityInfo
+Person o-- Phone
+IFacade <|-- HobbyFacade
+IFacade <|-- PersonFacade
+IFacade <|-- AddressFacade
+IFacade <|-- CityInfoFacade
+IFacade <|-- PhoneFacade
+
+@enduml

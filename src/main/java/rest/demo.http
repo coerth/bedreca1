@@ -1,0 +1,173 @@
+GET http://localhost:8080/devops_starter_war_exploded/api/person/phone
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/person/all
+Accept: application/json
+
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/xxx
+Content-Type: application/json
+#User-Agent: Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/cityinfo
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/cityinfo/1094
+Accept: application/json
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/cityinfo
+Content-Type: application/json
+
+{"zipcode": "9689", "city": "Hej"}
+
+###
+PUT http://localhost:8080/devops_starter_war_exploded/api/cityinfo/1094
+Content-Type: application/json
+
+{"zipcode": "9989", "city": "Nej"}
+
+###
+DELETE http://localhost:8080/devops_starter_war_exploded/api/cityinfo/1094
+Content-Type: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/phone
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/phone/1
+Accept: application/json
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/phone
+Content-Type: application/json
+
+{"number": 12321312, "description": "mobil", "person": {
+  "id": 1, "email": "a@a.dk", "firstName": "hej", "lastName": "hej"
+  }
+}
+
+###
+PUT http://localhost:8080/devops_starter_war_exploded/api/phone/4
+Content-Type: application/json
+
+{"number": 111111}
+
+###
+DELETE http://localhost:8080/devops_starter_war_exploded/api/phone/2
+Content-Type: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/phone
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/hobby/1
+Accept: application/json
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/hobby
+Content-Type: application/json
+
+{"name": "Gaming", "description": "Gaming"}
+
+###
+PUT http://localhost:8080/devops_starter_war_exploded/api/hobby/2
+Content-Type: application/json
+
+{"name": "Strikning"}
+
+###
+DELETE http://localhost:8080/devops_starter_war_exploded/api/hobby/2
+Content-Type: application/json
+
+{"str1": "First Property", "str2": "Second Property"}
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/address/1
+Accept: application/json
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/address
+Content-Type: application/json
+
+{"street": "Gladsaxe Møllevej 8", "additionalInfo": "til højre", "innerCityInfoDto":{
+  "id": 4, "zipcode": "2300", "city": "Bagsværd"
+}
+}
+
+###
+PUT http://localhost:8080/devops_starter_war_exploded/api/address/10
+Content-Type: application/json
+
+{"street": "Mortensvej 99", "additionalInfo": "indenfor", "innerCityInfoDto": {
+  "id": 1, "zipcode": "3300", "city": "Frederiksberg"
+}
+}
+
+###
+DELETE http://localhost:8080/devops_starter_war_exploded/api/address/1
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/devops_starter_war_exploded/api/person/1
+Content-Type:application/json
+
+{"email": "nej@jegvilhjem.dk"}
+
+###
+POST http://localhost:8080/devops_starter_war_exploded/api/person
+Content-Type: application/json
+
+{
+  "email": "a@a.dk",
+  "firstName": "hej",
+  "lastName": "hej",
+  "address": {
+    "id": 1,
+    "street": "something",
+    "additionalInfo": "something",
+    "innerCityInfoDto": {
+      "id": 1,
+      "zipcode": "1150",
+      "city": "København K"
+    }
+  },
+  "hobbies": [
+    {
+      "id": 1,
+      "name": "something",
+      "description": "something"
+    }
+  ],
+  "phones": [
+    {
+      "number": 116565762,
+      "description": "mobil"
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/person/hobby/something
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/person/hobby/amount/something
+Accept: application/json
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/person/city/1150
+Accept: application/json
+
+{"email": "long@long.dk","first_name": "long","last_name": "loooong","address": [],"hobby": [],"phone": []}
+
+###
+GET http://localhost:8080/devops_starter_war_exploded/api/person/45454545
+Accept: application/json
+

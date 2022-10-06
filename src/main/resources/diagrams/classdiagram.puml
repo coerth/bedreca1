@@ -1,0 +1,38 @@
+@startuml
+
+class Hobby
+class Person
+class Address
+class CityInfo
+class Phone
+class PersonHandler
+
+Hobby : - String name
+Hobby : - String description
+
+Person : - String email
+Person : - String firstName
+Person : - String lastName
+Person : - Address address
+Person : - Phone phone
+Person : - Set<Hobby> hobbySet
+
+PersonHandler : + addHobby()
+PersonHandler : + deleteHobby()
+
+Address : - String street
+Address : - String additionalInfo
+Address : - CityInfo cityInfo
+
+CityInfo : - int zipCode
+CityInfo : - String city
+
+Phone : - int number
+Phone : - String description
+
+Person o-- Hobby
+Person o-- Address
+Address o-- CityInfo
+Person o-- Phone
+
+@enduml
