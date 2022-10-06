@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.awt.*;
 
-@Path("address")
+@Path("/address")
 public class AddressResource {
     private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory();
     private static final AddressFacade FACADE =  AddressFacade.getInstance(EMF);
@@ -44,7 +44,7 @@ public class AddressResource {
     }
 
     @PUT
-    @Path("{id}")
+    @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
     public Response update(@PathParam("id") int id, String content) {
@@ -55,7 +55,7 @@ public class AddressResource {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response delete(@PathParam("id") int id) {
 
